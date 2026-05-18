@@ -61,6 +61,30 @@ def on_frame(sample):
     cv2.imshow("Camera", frame)
 ```
 
+### Dependencies & Build Configurations
+ 1. Android Dependency Configuration (build.gradle.kts)
+To incorporate the native Zenoh client bindings into the Android pipeline, ensure your repositories query Maven Central. The library wraps the underlying performance architecture using the native Android NDK ecosystem layer.
+
+```Kotlin
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Core Eclipse Zenoh Android Binding Library
+    implementation("org.eclipse.zenoh:zenoh-kotlin-android:1.1.1")
+}
+```
+
+ 2. Android Platform Permissions (AndroidManifest.xml)
+Zenoh utilizes socket interfaces for mesh routing. The following application hardware configurations are required:
+```XML
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+```
+
 ### `robot/depth` (Optional)
 
 **Direction:** Phone → Laptop  
