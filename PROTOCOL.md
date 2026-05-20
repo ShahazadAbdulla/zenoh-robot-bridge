@@ -174,31 +174,6 @@ s.declare_subscriber("robot/camera", lambda sample: print(len(sample.payload)))
 No IP addresses. No pairing. Just Zenoh.
 """
 
-# --- .gitignore ---
-gitignore = """# ESP-IDF
-build/
-sdkconfig
-sdkconfig.old
-managed_components/
 
-# Android
-*.iml
-.gradle/
-local.properties
-.idea/
-build/
-captures/
-.externalNativeBuild/
-.cxx/
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.env
-venv/
-
-# OS
 .DS_Store
 Thumbs.db
